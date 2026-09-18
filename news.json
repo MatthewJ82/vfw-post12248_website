@@ -1,0 +1,20 @@
+{
+  "_howto": "One entry per item. id = short unique slug (letters, numbers, dashes) used in the story's link. date = YYYY-MM-DD. summary = short text shown in the list. full = the whole story, shown on its own page (can include simple HTML like <p>, <br>, <a href=...>, <img src=images/...>). If full is left out, the summary is used. image (optional) = a photo in the images folder, shown at the top of the story page.",
+  "news": [
+    {
+      "id": "new-website",
+      "date": "2026-09-18",
+      "title": "Welcome to the new Post 12248 website",
+      "summary": "Our new website is live. Check here for announcements, and the Events page for meeting dates.",
+      "full": "<p>Our new website is live. Check here for announcements, and the Events page for meeting dates and Post activities.</p><p>Members: send news items, photos, and event details to the Adjutant to have them posted.</p>"
+    },
+    {
+      "id": "post-chartered",
+      "date": "2026-03-28",
+      "title": "Post 12248 officially chartered",
+      "summary": "VFW Post 12248 received its charter in a ceremony at American Legion Stallings-Williams Post 206 in Chesapeake Beach.",
+      "full": "<p>VFW Post 12248 was officially chartered on March 28, 2026, during a ceremony at American Legion Stallings-Williams Post 206 in Chesapeake Beach, Maryland.</p><p>The Post is dedicated to the memory of one of Chesapeake Beach's favorite sons, Secretary George W. Owings III. <a href=\"about.html\">Read more about the Post and Secretary Owings.</a></p>",
+      "image": "images/meeting-hall.jpg"
+    }
+  ]
+}
