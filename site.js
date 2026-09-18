@@ -16,6 +16,27 @@
     if (a.getAttribute('href') === here) a.setAttribute('aria-current', 'page');
   });
 
+  // Contact form: send in the background, then show our own thank-you page
+  var form = document.getElementById('contact-form');
+  if (form && window.fetch && window.FormData) {
+    form.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      var status = document.getElementById('form-status');
+      var btn = form.querySelector('button[type=submit]');
+      if (btn) btn.disabled = true;
+      if (status) status.textContent = 'Sending…';
+      fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
+        .then(function (r) {
+          if (r.ok) { location.href = 'thanks.html'; return; }
+          return r.json().then(function (d) { throw new Error((d.errors || []).map(function (e) { return e.message; }).join(', ') || 'Send failed'); });
+        })
+        .catch(function (err) {
+          if (btn) btn.disabled = false;
+          if (status) status.textContent = 'Sorry, the message could not be sent (' + err.message + '). Please email or call the Post.';
+        });
+    });
+  }
+
   // Footer year
   var y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();

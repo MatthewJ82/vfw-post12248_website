@@ -57,9 +57,8 @@
     <section class="block alt">
       <div class="wrap" style="max-width:640px">
         <h2>Send a Message</h2>
-        <form action="https://formspree.io/f/xoevvbwk" method="POST">
+        <form id="contact-form" action="https://formspree.io/f/xoevvbwk" method="POST">
           <input type="hidden" name="_subject" value="Message from vfwpost12248.org">
-          <input type="hidden" name="_next" value="https://www.vfwpost12248.org/thanks.html">
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
           <label for="name">Your name</label>
           <input id="name" name="name" type="text" required autocomplete="name">
@@ -68,6 +67,7 @@
           <label for="message">Message</label>
           <textarea id="message" name="message" rows="6" required></textarea>
           <button class="btn blue" type="submit">Send</button>
+          <p id="form-status" class="sans" role="status" aria-live="polite" style="margin-top:12px"></p>
         </form>
         <p class="muted sans" style="font-size:0.9rem;margin-top:16px">This site collects nothing beyond what you type into this form, which is emailed to the Post.</p>
       </div>
