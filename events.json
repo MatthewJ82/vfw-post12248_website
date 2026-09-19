@@ -1,6 +1,14 @@
 {
   "_howto": "Add one entry per event. date is YYYY-MM-DD. time, location and description are optional. Past events disappear automatically. Keep the commas between entries and no comma after the last one.",
   "events": [
+      {
+      "date": "2026-10-1",
+      "endDate": "2026-10-4
+      "title": "Calvert County Fair",
+      "time": "All Day",
+      "location": "140 Calvert Fair Dr, Prince Frederick, MD 20678",
+      "description": "Come see us at our booth."
+    },    
     {
       "date": "2026-10-15",
       "title": "Monthly Post Meeting",
