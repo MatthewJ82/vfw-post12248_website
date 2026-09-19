@@ -156,6 +156,7 @@ th { background: var(--vfw-blue); color: #fff; font-family: Arial, Helvetica, sa
 }
 .event .date .m { display: block; font-size: 0.8rem; text-transform: uppercase; color: var(--vfw-gold-light); letter-spacing: 0.08em; }
 .event .date .d { display: block; font-size: 1.6rem; font-weight: bold; line-height: 1.1; }
+.event .date.multi .d { font-size: 1.05rem; padding-top: 4px; }
 .event h3 { margin: 0 0 4px; }
 .event .meta { font-family: Arial, Helvetica, sans-serif; font-size: 0.95rem; color: var(--muted); margin-bottom: 6px; }
 .event p { margin: 0; }

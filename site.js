@@ -109,7 +109,7 @@
     var limit = parseInt(target.getAttribute('data-events'), 10) || 0;
     var today = new Date(); today.setHours(0, 0, 0, 0);
     var upcoming = list
-      .filter(function (e) { return e.date && parseDate(e.date) >= today; })
+      .filter(function (e) { return e.date && parseDate(e.endDate || e.date) >= today; })
       .sort(function (a, b) { return parseDate(a.date) - parseDate(b.date); });
     if (limit) upcoming = upcoming.slice(0, limit);
 
@@ -119,11 +119,17 @@
     }
     target.innerHTML = upcoming.map(function (e) {
       var d = parseDate(e.date);
+      var end = e.endDate ? parseDate(e.endDate) : null;
+      var dayLabel = String(d.getDate());
+      var monthLabel = months[d.getMonth()];
+      if (end && end > d) {
+        dayLabel = end.getMonth() === d.getMonth() ? d.getDate() + '\u2013' + end.getDate() : d.getDate() + '\u2013' + months[end.getMonth()] + ' ' + end.getDate();
+      }
       var meta = [];
       if (e.time) meta.push(e.time);
       if (e.location) meta.push(e.location);
       return '<article class="event">' +
-        '<div class="date"><span class="m">' + months[d.getMonth()] + '</span><span class="d">' + d.getDate() + '</span></div>' +
+        '<div class="date' + (end && end > d ? ' multi' : '') + '"><span class="m">' + monthLabel + '</span><span class="d">' + dayLabel + '</span></div>' +
         '<div><h3>' + esc(e.title) + '</h3>' +
         (meta.length ? '<div class="meta">' + esc(meta.join(' · ')) + '</div>' : '') +
         (e.description ? '<p>' + esc(e.description) + '</p>' : '') +
