@@ -1,0 +1,48 @@
+{
+  "_howto": "Add one entry per event. date is YYYY-MM-DD. time, location and description are optional. Past events disappear automatically. Keep the commas between entries and no comma after the last one.",
+  "events": [
+      {
+      "date": "2026-10-1",
+      "endDate": "2026-10-4",
+      "title": "Calvert County Fair",
+      "time": "All Day",
+      "location": "140 Calvert Fair Dr, Prince Frederick, MD 20678",
+      "description": "Come see us at our booth."
+    },    
+    {
+      "date": "2026-10-15",
+      "title": "Monthly Post Meeting",
+      "time": "7:00–8:00 PM",
+      "location": "VFW Post 12248, 3330 Chesapeake Beach Rd",
+      "description": "All members welcome. Held the 3rd Thursday of every month."
+    },
+    {
+      "date": "2026-11-11",
+      "title": "Veterans Day",
+      "time": "TBD",
+      "location": "TBD",
+      "description": "Details coming soon."
+    },
+    {
+      "date": "2026-11-19",
+      "title": "Monthly Post Meeting",
+      "time": "7:00–8:00 PM",
+      "location": "VFW Post 12248, 3330 Chesapeake Beach Rd",
+      "description": "All members welcome. Held the 3rd Thursday of every month."
+    },
+    {
+      "date": "2026-12-17",
+      "title": "Monthly Post Meeting",
+      "time": "7:00–8:00 PM",
+      "location": "VFW Post 12248, 3330 Chesapeake Beach Rd",
+      "description": "All members welcome. Held the 3rd Thursday of every month."
+    },
+    {
+      "date": "2027-01-21",
+      "title": "Monthly Post Meeting",
+      "time": "7:00–8:00 PM",
+      "location": "VFW Post 12248, 3330 Chesapeake Beach Rd",
+      "description": "All members welcome. Held the 3rd Thursday of every month."
+    }
+  ]
+}
