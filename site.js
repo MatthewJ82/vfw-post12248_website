@@ -123,7 +123,11 @@
       var dayLabel = String(d.getDate());
       var monthLabel = months[d.getMonth()];
       if (end && end > d) {
-        dayLabel = end.getMonth() === d.getMonth() ? d.getDate() + '\u2013' + end.getDate() : d.getDate() + '\u2013' + months[end.getMonth()] + ' ' + end.getDate();
+        // Same month: "OCT" over "2–4". Across months: "OCT–NOV" over "30–1".
+        dayLabel = d.getDate() + '\u2013' + end.getDate();
+        if (end.getMonth() !== d.getMonth() || end.getFullYear() !== d.getFullYear()) {
+          monthLabel = months[d.getMonth()] + '\u2013' + months[end.getMonth()];
+        }
       }
       var meta = [];
       if (e.time) meta.push(e.time);
