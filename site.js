@@ -18,6 +18,21 @@
 
   // Contact form: send in the background, then show our own thank-you page
   var form = document.getElementById('contact-form');
+
+  // Pre-fill the form when arriving from a topic link, e.g. contact.html?topic=auxiliary
+  var topics = {
+    auxiliary: {
+      subject: 'VFW Auxiliary inquiry from vfwpost12248.org',
+      message: "I'm interested in joining the VFW Auxiliary at Post 12248. Please contact me with more information.\n\n"
+    }
+  };
+  var topic = topics[new URLSearchParams(location.search).get('topic')];
+  if (form && topic) {
+    var subj = document.getElementById('subject');
+    var msg = document.getElementById('message');
+    if (subj) subj.value = topic.subject;
+    if (msg && !msg.value) msg.value = topic.message;
+  }
   if (form && window.fetch && window.FormData) {
     form.addEventListener('submit', function (ev) {
       ev.preventDefault();
