@@ -18,6 +18,21 @@
 
   // Contact form: send in the background, then show our own thank-you page
   var form = document.getElementById('contact-form');
+
+  // Pre-fill the form when arriving from a topic link, e.g. contact.html?topic=auxiliary
+  var topics = {
+    auxiliary: {
+      subject: 'VFW Auxiliary inquiry from vfwpost12248.org',
+      message: "I'm interested in joining the VFW Auxiliary at Post 12248. Please contact me with more information.\n\n"
+    }
+  };
+  var topic = topics[new URLSearchParams(location.search).get('topic')];
+  if (form && topic) {
+    var subj = document.getElementById('subject');
+    var msg = document.getElementById('message');
+    if (subj) subj.value = topic.subject;
+    if (msg && !msg.value) msg.value = topic.message;
+  }
   if (form && window.fetch && window.FormData) {
     form.addEventListener('submit', function (ev) {
       ev.preventDefault();
@@ -123,7 +138,11 @@
       var dayLabel = String(d.getDate());
       var monthLabel = months[d.getMonth()];
       if (end && end > d) {
-        dayLabel = end.getMonth() === d.getMonth() ? d.getDate() + '\u2013' + end.getDate() : d.getDate() + '\u2013' + months[end.getMonth()] + ' ' + end.getDate();
+        // Same month: "OCT" over "2–4". Across months: "OCT–NOV" over "30–1".
+        dayLabel = d.getDate() + '\u2013' + end.getDate();
+        if (end.getMonth() !== d.getMonth() || end.getFullYear() !== d.getFullYear()) {
+          monthLabel = months[d.getMonth()] + '\u2013' + months[end.getMonth()];
+        }
       }
       var meta = [];
       if (e.time) meta.push(e.time);
