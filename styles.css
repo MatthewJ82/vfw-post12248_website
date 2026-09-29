@@ -67,9 +67,9 @@ header.site .wrap {
 }
 .brand { display: flex; align-items: center; gap: 16px; color: var(--text); text-decoration: none; padding: 10px 0; }
 .brand .logo { display: flex; flex-shrink: 0; }
-.brand .logo img { width: 150px; height: auto; } /* never below 100px wide (brand minimum) */
+.brand .logo img { width: 160px; height: auto; } /* official Post logo; never below 100px wide (brand minimum) */
 .brand .post { font-family: var(--serif); color: var(--vfw-gray); font-size: 1.05rem; line-height: 1.2; border-left: 1px solid var(--border); padding-left: 16px; }
-.brand .post strong { display: block; color: var(--text); font-weight: 400; font-size: 1.15rem; }
+
 .wordmark { width: 280px; height: auto; margin: 0 0 20px; }
 nav.main ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 4px; }
 nav.main a {
@@ -88,7 +88,6 @@ nav.main a.cta:hover { background: var(--vfw-red-dark); color: #fff; }
   .menu-btn { display: block; }
   .brand .logo img { width: 110px; }
   .brand .post { font-size: 0.85rem; line-height: 1.25; }
-  .brand .post strong { font-size: 1rem; }
   .brand .post .loc { display: none; }
   .topbar { font-size: 0.7rem; letter-spacing: 0.08em; }
   .hero { padding: 56px 16px; }
@@ -117,7 +116,9 @@ nav.main a.cta:hover { background: var(--vfw-red-dark); color: #fff; }
 .hero .wrap { position: relative; }
 .hero h1 { color: var(--vfw-red); margin-bottom: 0.3em; font-size: clamp(2.2rem, 5vw, 3.4rem); letter-spacing: -0.01em; }
 .hero p { font-size: 1.25rem; max-width: 640px; margin: 0 auto 1.6em; }
-.hero-logo { width: min(320px, 70vw); height: auto; margin: 0 auto 24px; }
+.hero-logo { width: min(420px, 80vw); height: auto; margin: 0 auto 20px; display: block; }
+.hero-title span { display: block; font-family: var(--serif); font-weight: 400; color: var(--vfw-gray); font-size: clamp(1.3rem, 3vw, 1.8rem); letter-spacing: 0; }
+.footer-logo { width: 180px; height: auto; margin: 0 0 16px; }
 .btn {
   display: inline-block; padding: 12px 22px; border-radius: 2px; text-decoration: none;
   font-family: var(--sans); font-weight: bold; font-size: 1rem; margin: 4px;
