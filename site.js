@@ -87,7 +87,8 @@
           var t = document.querySelector('.page-title h1'); if (t) t.textContent = n.title;
           var sub = document.querySelector('.page-title p'); if (sub) sub.textContent = longMonths[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
           storyTarget.innerHTML =
-            (n.image ? '<figure class="figure" style="margin:0 0 24px"><img src="' + esc(n.image) + '" alt="" loading="lazy"></figure>' : '') +
+            (n.image ? '<figure class="figure" style="margin:0 0 24px"><img src="' + esc(n.image) + '" alt="' + esc(n.caption || '') + '" onerror="this.parentNode.style.display=\'none\'">' +
+              (n.caption ? '<figcaption>' + esc(n.caption) + '</figcaption>' : '') + '</figure>' : '') +
             '<div class="story">' + (n.full || '<p>' + esc(n.summary || '') + '</p>') + '</div>' +
             '<p style="margin-top:28px"><a class="btn blue" href="news.html">&larr; All news</a></p>';
           newsTargets.forEach(function (x) { x.parentNode.removeChild(x); });
