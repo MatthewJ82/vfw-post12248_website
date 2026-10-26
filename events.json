@@ -1,5 +1,5 @@
 {
-  "_howto": "Add one entry per event. date is YYYY-MM-DD. For a multi-day event add endDate (YYYY-MM-DD); it stays listed until the end date passes. time, location and description are optional. Past events disappear automatically. Keep the commas between entries and no comma after the last one.",
+  "_howto": "Add one entry per event. date is YYYY-MM-DD. For a multi-day event add endDate (YYYY-MM-DD); it stays listed until the end date passes. time, location and description are optional. image (optional) = a photo or flyer in the images folder, e.g. images/fish-fry.jpg; it shows on the Events page and opens full size when clicked. Past events disappear automatically. Keep the commas between entries and no comma after the last one.",
   "events": [
     {
       "date": "2026-09-30",
@@ -16,12 +16,28 @@
       "location": "VFW Post 12248, 3330 Chesapeake Beach Rd",
       "description": "All members welcome. Held the 3rd Thursday of every month."
     },
+     {
+      "date": "2026-10-30",
+      "title": "American Legion Riders Roast Beef Fundraiser Dinner",
+      "time": "5:30-7:00 PM",
+      "location": "VFW / American Legion Post, 3330 Chesapeake Beach Rd",
+      "description": "Open to the public. Good food! Fair Price!",
+      "image": "images/RBFD.png"
+    },
+      {
+      "date": "2026-11-04",
+      "endDate": "2026-11-11",
+      "title": "Operation Green Light",
+      "time": "All Day Every Day",
+      "location": "Calvert County",
+      "description": "Calvert County Veterans Commission asks that you light up your homes or business with a green light in honor of our veterans."
+    },
     {
       "date": "2026-11-11",
       "title": "Veterans Day",
-      "time": "TBD",
-      "location": "TBD",
-      "description": "Details coming soon."
+      "time": "10:00 AM",
+      "location": "Calvert County Courthouse, 175 Main Street Prince Frederick, MD 20678",
+      "description": "Join us in honoring the brave men and women who have served our country at Calvert County’s annual Veterans Day Ceremony. The event will take place on the Courthouse Greens in Prince Frederick. In the event of rain, the ceremony will be moved indoors to the Calvert County Circuit Courthouse. All are welcome to attend as we pay tribute to our veterans and their service to our nation."
     },
     {
       "date": "2026-11-19",

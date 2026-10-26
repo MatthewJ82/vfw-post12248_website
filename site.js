@@ -153,6 +153,9 @@
         '<div><h3>' + esc(e.title) + '</h3>' +
         (meta.length ? '<div class="meta">' + esc(meta.join(' · ')) + '</div>' : '') +
         (e.description ? '<p>' + esc(e.description) + '</p>' : '') +
+        // Optional photo or flyer: shown on the Events page only (not the home page box). Click opens full size.
+        (e.image && !limit ? '<a class="event-img" href="' + esc(e.image) + '" target="_blank" rel="noopener">' +
+          '<img src="' + esc(e.image) + '" alt="' + esc(e.imageAlt || e.title) + '" loading="lazy" onerror="this.parentNode.style.display=\'none\'"></a>' : '') +
         '</div></article>';
     }).join('');
   }

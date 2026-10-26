@@ -183,6 +183,8 @@ th { background: var(--vfw-red); color: #fff; font-family: var(--sans); font-wei
 .event h3 { margin: 0 0 4px; }
 .event .meta { font-family: var(--sans); font-size: 0.95rem; color: var(--muted); margin-bottom: 6px; }
 .event p { margin: 0; }
+.event-img { display: block; margin-top: 12px; max-width: 360px; }
+.event-img img { border: 1px solid var(--border); border-radius: 2px; }
 .no-events { color: var(--muted); font-style: italic; }
 
 /* News */
