@@ -1,5 +1,15 @@
 {
-  "_howto": "Add one entry per event. date is YYYY-MM-DD. For a multi-day event add endDate (YYYY-MM-DD); it stays listed until the end date passes. time, location and description are optional. image (optional) = a photo or flyer in the images folder, e.g. images/fish-fry.jpg; it shows on the Events page and opens full size when clicked. Past events disappear automatically. Keep the commas between entries and no comma after the last one.",
+  "_howto": "events = one-time events. Add one entry per event. date is YYYY-MM-DD. For a multi-day event add endDate (YYYY-MM-DD); it stays listed until the end date passes. time, location and description are optional. image (optional) = a photo or flyer in the images folder, e.g. images/fish-fry.jpg; it shows on the Events page and opens full size when clicked. Past events disappear automatically. Keep the commas between entries and no comma after the last one.",
+  "_howto_recurring": "recurring = events that repeat automatically. every = a weekday for weekly events (\"Thursday\") or 1st/2nd/3rd/4th/last + weekday for monthly events (\"3rd Thursday\"). The next 3 months of dates are listed automatically (change with showMonths). Optional: skip = dates to leave out, e.g. [\"2026-12-17\"] for a cancelled meeting; start / end = first and last date (YYYY-MM-DD); schedule = custom wording for the Regular Schedule list; time, location, description, image work the same as one-time events.",
+  "recurring": [
+    {
+      "title": "Monthly Post Meeting",
+      "every": "3rd Thursday",
+      "time": "7:00–8:00 PM",
+      "location": "VFW Post 12248, 3330 Chesapeake Beach Rd",
+      "description": "All members welcome. Held the 3rd Thursday of every month."
+    }
+  ],
   "events": [
     {
       "date": "2026-09-30",
@@ -8,13 +18,6 @@
       "time": "All Day Every Day",
       "location": "Calvert County Fairgrounds, 140 Calvert Fair Dr. Prince Frederick, MD 20678",
       "description": "Come see us at our booth."
-    },
-    {
-      "date": "2026-10-15",
-      "title": "Monthly Post Meeting",
-      "time": "7:00–8:00 PM",
-      "location": "VFW Post 12248, 3330 Chesapeake Beach Rd",
-      "description": "All members welcome. Held the 3rd Thursday of every month."
     },
      {
       "date": "2026-10-30",
@@ -38,27 +41,6 @@
       "time": "10:00 AM",
       "location": "Calvert County Courthouse, 175 Main Street Prince Frederick, MD 20678",
       "description": "Join us in honoring the brave men and women who have served our country at Calvert County’s annual Veterans Day Ceremony. The event will take place on the Courthouse Greens in Prince Frederick. In the event of rain, the ceremony will be moved indoors to the Calvert County Circuit Courthouse. All are welcome to attend as we pay tribute to our veterans and their service to our nation."
-    },
-    {
-      "date": "2026-11-19",
-      "title": "Monthly Post Meeting",
-      "time": "7:00–8:00 PM",
-      "location": "VFW Post 12248, 3330 Chesapeake Beach Rd",
-      "description": "All members welcome. Held the 3rd Thursday of every month."
-    },
-    {
-      "date": "2026-12-17",
-      "title": "Monthly Post Meeting",
-      "time": "7:00–8:00 PM",
-      "location": "VFW Post 12248, 3330 Chesapeake Beach Rd",
-      "description": "All members welcome. Held the 3rd Thursday of every month."
-    },
-    {
-      "date": "2027-01-21",
-      "title": "Monthly Post Meeting",
-      "time": "7:00–8:00 PM",
-      "location": "VFW Post 12248, 3330 Chesapeake Beach Rd",
-      "description": "All members welcome. Held the 3rd Thursday of every month."
     }
   ]
 }
