@@ -119,7 +119,57 @@
 
   // Events: load events.json into any element with data-events
   var targets = document.querySelectorAll('[data-events]');
-  if (!targets.length) return;
+  var scheduleTargets = document.querySelectorAll('[data-recurring]');
+  if (!targets.length && !scheduleTargets.length) return;
+
+  // Recurring events: turn a rule like "3rd Thursday" (monthly) or "Thursday" (weekly)
+  // into real dates, from today through the next "showMonths" months (default 3).
+  var dayNames = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
+  var ordinals = { '1st': 1, 'first': 1, '2nd': 2, 'second': 2, '3rd': 3, 'third': 3, '4th': 4, 'fourth': 4, '5th': 5, 'fifth': 5, 'last': -1 };
+  function ymd(d) {
+    return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+  }
+  function expandRecurring(r) {
+    var words = String(r.every || '').toLowerCase().trim().split(/\s+/);
+    var weekday = dayNames.indexOf(words[words.length - 1]);
+    if (weekday < 0) return [];
+    var nth = words.length > 1 ? ordinals[words[0]] : 0; // 0 = weekly
+    if (words.length > 1 && !nth) return [];
+    var today = new Date(); today.setHours(0, 0, 0, 0);
+    var from = r.start ? parseDate(r.start) : today; if (from < today) from = today;
+    var until = new Date(today.getFullYear(), today.getMonth() + (parseInt(r.showMonths, 10) || 3) + 1, 0);
+    if (r.end && parseDate(r.end) < until) until = parseDate(r.end);
+    var skip = r.skip || [];
+    var dates = [];
+    if (!nth) {
+      var d = new Date(from); d.setDate(d.getDate() + ((weekday - d.getDay() + 7) % 7));
+      for (; d <= until; d.setDate(d.getDate() + 7)) dates.push(new Date(d));
+    } else {
+      for (var m = new Date(from.getFullYear(), from.getMonth(), 1); m <= until; m.setMonth(m.getMonth() + 1)) {
+        var x;
+        if (nth > 0) {
+          x = new Date(m.getFullYear(), m.getMonth(), 1);
+          x.setDate(1 + ((weekday - x.getDay() + 7) % 7) + (nth - 1) * 7);
+          if (x.getMonth() !== m.getMonth()) continue; // e.g. no 5th Thursday this month
+        } else {
+          x = new Date(m.getFullYear(), m.getMonth() + 1, 0);
+          x.setDate(x.getDate() - ((x.getDay() - weekday + 7) % 7));
+        }
+        if (x >= from && x <= until) dates.push(x);
+      }
+    }
+    return dates.filter(function (d) { return skip.indexOf(ymd(d)) < 0; }).map(function (d) {
+      return { date: ymd(d), title: r.title, time: r.time, location: r.location, description: r.description, image: r.image };
+    });
+  }
+  function renderSchedule(list, target) {
+    if (!list.length) return; // keep whatever is written in the page
+    target.innerHTML = list.map(function (r) {
+      var every = String(r.every || '').trim();
+      var when = r.schedule || (/\s/.test(every) ? every + ' of every month' : 'Every ' + every);
+      return '<li><strong>' + esc(r.title) + '</strong> ' + esc(when + (r.time ? ', ' + r.time : '')) + '</li>';
+    }).join('');
+  }
 
   function render(list, target) {
     var limit = parseInt(target.getAttribute('data-events'), 10) || 0;
@@ -162,7 +212,13 @@
 
   fetch('events.json', { cache: 'no-store' })
     .then(function (r) { return r.json(); })
-    .then(function (data) { targets.forEach(function (t) { render(data.events || [], t); }); })
+    .then(function (data) {
+      var recurring = data.recurring || [];
+      var all = (data.events || []).slice();
+      recurring.forEach(function (r) { all = all.concat(expandRecurring(r)); });
+      targets.forEach(function (t) { render(all, t); });
+      scheduleTargets.forEach(function (t) { renderSchedule(recurring, t); });
+    })
     .catch(function () {
       targets.forEach(function (t) {
         t.innerHTML = '<p class="no-events">Events could not be loaded. Please call the Post for the latest schedule.</p>';
