@@ -8,6 +8,13 @@
       "time": "7:00–8:00 PM",
       "location": "VFW Post 12248, 3330 Chesapeake Beach Rd",
       "description": "All members welcome. Held the 3rd Thursday of every month."
+    },
+    {
+      "title": "Calvert County Commission for Veterans and Military Families Meetings",
+      "every": "1st Wednesday",
+      "time": "5:00–6:30 PM",
+      "location": "Community Resources Building, University of Maryland Extension Conference Room, 30 Duke Street, Suite 105, Prince Frederick",
+      "description": "Open advisory board meetings focused on veteran benefits, policies, and local support initiatives."
     }
   ],
   "events": [
@@ -19,7 +26,7 @@
       "location": "Calvert County Fairgrounds, 140 Calvert Fair Dr. Prince Frederick, MD 20678",
       "description": "Come see us at our booth."
     },
-     {
+    {
       "date": "2026-10-30",
       "title": "American Legion Riders Roast Beef Fundraiser Dinner",
       "time": "5:30-7:00 PM",
@@ -27,13 +34,21 @@
       "description": "Open to the public. Good food! Fair Price!",
       "image": "images/RBFD.png"
     },
-      {
+    {
       "date": "2026-11-04",
       "endDate": "2026-11-11",
       "title": "Operation Green Light",
       "time": "All Day Every Day",
       "location": "Calvert County",
       "description": "Calvert County Veterans Commission asks that you light up your homes or business with a green light in honor of our veterans."
+    },
+    {
+      "date": "2026-11-07",
+      "title": "Veteran's Day Pancake Breakfast",
+      "time": "8:00-11:00 AM",
+      "location": "St. Leonard Volunteer Fire Department, 200 Calvert Beach Rd",
+      "description": "All you can eat pancake breakfast. All veterans eat free, Everyone else: by donation ",
+      "image": "images/SLVD-PCBF-1107.jpeg"
     },
     {
       "date": "2026-11-11",
