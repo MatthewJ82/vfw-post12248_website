@@ -129,6 +129,9 @@ nav.main a.cta:hover { background: var(--vfw-red-dark); color: #fff; }
 .btn.outline:hover { background: var(--vfw-red); color: #fff; }
 .btn.blue { background: var(--vfw-black); color: #fff; }
 .btn.blue:hover { background: #000; color: #fff; }
+.btn.navy { background: var(--vfw-blue); color: #fff; }
+.btn.navy:hover { background: #0f3a66; color: #fff; }
+.center { text-align: center; }
 
 /* Sections */
 section.block { padding: 48px 0; }
