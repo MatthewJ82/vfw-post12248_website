@@ -1,6 +1,14 @@
 {
   "_howto": "One entry per item. id = short unique slug (letters, numbers, dashes) used in the story's link. date = YYYY-MM-DD. summary = short text shown in the list. full = the whole story, shown on its own page (can include simple HTML like <p>, <br>, <a href=...>, <img src=images/...>). If full is left out, the summary is used. image (optional) = a photo in the images folder, shown at the top of the story page. caption (optional) = text shown under that photo.",
   "news": [
+     {
+      "id": "Veterans-on-Capitol_Hill",
+      "date": "2026-11-09",
+      "title": "Veterans on Capitol Hill: Call Congress.",
+      "summary": "On November 9–10, VFW and VFW Auxiliary advocates will be on Capitol Hill fighting for veterans' earned benefits. Americans across the country can stand with them by sending a message directly to Congress.",
+      "full": "<p><strong>TODAY: The National Call-In Begins!</strong></p><p>Right now, VFW and VFW Auxiliary advocates from Maryland and across the country are on Capitol Hill meeting with congressional offices. We need you to back them up by making sure our representatives hear the exact same message from constituents back home!</p><p>Our legislative stance is clear. Vote NO on the Take Care of America's Veterans Act (TCAVA) - Section 108 would reduce VA disability compensation for future veterans. Vote YES to pass the standalone CLEAN Major Richard Star Act - Combat injured military retirees must recieve the full benefits they earned.</p><p>HOW YOU CAN HELP TODAY & TOMORROW: We are asking all veterans, military families, friends, and community partners to contact your congressional offices by phone during Washington, D.C. office hours. You do not need to prepare your own talking points, we have everything ready for you!</p><p>Step 1: Go to the VFW Action Alert: <a href='https://www.votervoice.net/VFW/Campaigns/140412/Respond'</a></p><p>Step 2: Select the new Phone-Call Option.</p><p>Step 3: The system will automatically provide your specific congressional office phone numbers and a prepared script to read. Even if you have already sent a written message or signed the petition, making a phone call today or tomorrow provides critical reinforcement.</p><p>Let’s flood the phone lines and make our voices heard. Please share this post and the action link with your friends, family, and coworkers!</p><p><figure class='figure'><img src='images/VFWCH02.jpeg' alt= 'How to Participate'></figure></p><p><strong><a href='https://www.votervoice.net/VFW/Campaigns/140412/Respond'>Take action now!</a></strong>",
+      "image": "images/VFWCH01.jpeg"
+    },
     {
       "id": "Warfighter-Advance-Visit",
       "date": "2026-10-15",
