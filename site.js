@@ -84,6 +84,12 @@
           if (!n) { storyTarget.innerHTML = '<p class="no-events">That story could not be found.</p><p><a href="news.html">All news &rarr;</a></p>'; return; }
           var d = parseDate(n.date);
           document.title = n.title + ' – VFW Post 12248';
+          // Give each story its own search description and official address
+          var md = document.querySelector('meta[name="description"]');
+          if (md && n.summary) md.setAttribute('content', n.summary);
+          var canon = document.querySelector('link[rel="canonical"]');
+          if (!canon) { canon = document.createElement('link'); canon.rel = 'canonical'; document.head.appendChild(canon); }
+          canon.href = 'https://www.vfwpost12248.org/news?story=' + encodeURIComponent(n.id);
           var t = document.querySelector('.page-title h1'); if (t) t.textContent = n.title;
           var sub = document.querySelector('.page-title p'); if (sub) sub.textContent = longMonths[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
           storyTarget.innerHTML =
