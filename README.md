@@ -8,7 +8,13 @@ Static site hosted on Cloudflare Pages. Commit to `main` and it deploys automati
 - `site.js` - mobile menu + loads events
 - `news.json` - **edit this to post news.** One entry per item with an `id`, `date` (YYYY-MM-DD), `title`, `summary`, and optional `full` story and `image`. Each item gets its own page at `news.html?story=ID`. Newest shows first.
 - `events.json` - **edit this to add events.** One entry per event, date as YYYY-MM-DD. Past events hide automatically.
-- `images/` - put the emblem and photos here
+- `images/` - all pictures, sorted into folders:
+  - `images/site/` - logo, favicon, and the link-preview image used on every page
+  - `images/pages/` - photos used on the About and Contact pages
+  - `images/leaders/` - officer headshots for the About page
+  - `images/news/` - news story photos, named `YYYY-MM-DD-topic.jpg`
+  - `images/events/` - event flyers, named `YYYY-MM-DD-event-name.jpg`
+  - File names: lowercase, dashes instead of spaces, and the exact same spelling in the code (capital letters matter).
 
 ## Adding an event
 Open `events.json` on GitHub, click the pencil, add an entry like:
